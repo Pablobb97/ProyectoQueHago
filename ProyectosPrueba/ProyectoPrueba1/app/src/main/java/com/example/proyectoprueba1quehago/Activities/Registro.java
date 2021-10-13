@@ -43,9 +43,8 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        recoger_datos();
+        //recoger_datos();
         pulsarBotonRegistro();
-        enviar_BBDD();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
@@ -62,11 +61,11 @@ public class Registro extends AppCompatActivity {
         boton_Registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                et_nombre_usuario = findViewById(R.id.editTextTextNombreUsuario);
-                nombre_usuario = et_nombre_usuario.getText();
+                recoger_datos();
                 Toast.makeText(Registro.this, nombre_usuario, Toast.LENGTH_SHORT).show();
                 boton_Registrarse.setTextColor(Color.parseColor("#9E9E9E"));
-                et_nombre_usuario.setText(nombre_usuario);
+                //et_nombre_usuario.setText(nombre_usuario);
+                enviar_BBDD();
             }
         });
     }
@@ -78,7 +77,7 @@ public class Registro extends AppCompatActivity {
         HttpURLConnection conexion = null;
 
         try {
-            url = new URL("http://10.0.2.2:80/Android/AppAndroid1/public/info/"+nombre_usuario+"/"+nombre_usuario+"/"+contrasena+"/"+email+"/"+fecha_nacimiento);
+            url = new URL("http://localhost/Android/AppPabloProyectoQueHago/public/registro/"+nombre_y_apellidos+"/"+nombre_usuario+"/"+contrasena+"/"+email+"/"+fecha_nacimiento);
             System.out.println("************"+url+"************");
             conexion = (HttpURLConnection) url.openConnection();
 
@@ -103,13 +102,17 @@ public class Registro extends AppCompatActivity {
     private void recoger_datos() {
         et_nombre_y_apellidos = findViewById(R.id.editTextTextNombreApellido);
         et_nombre_usuario = findViewById(R.id.editTextTextNombreUsuario);
-        et_contrasena = findViewById(R.id.editTextContrasena);
+        et_contrasena = findViewById(R.id.editTextTextPassword);
         et_email = findViewById(R.id.editTextTextEmailAddress);
         et_fecha_nacimiento = findViewById(R.id.editTextDate);
         boton_Registrarse = findViewById(R.id.idBotonRegistrarseRegistro);
 
+        nombre_y_apellidos = et_nombre_y_apellidos.getText();
         nombre_usuario = et_nombre_usuario.getText();
+        contrasena = et_contrasena.getText();
+        email = et_email.getText();
+        fecha_nacimiento = et_fecha_nacimiento.getText();
 
-
+        System.out.println("-------+++++++-------"+nombre_y_apellidos+"-"+nombre_usuario+"-"+contrasena+"-"+email+"-"+fecha_nacimiento+"-------+++++++-------");
     }
 }

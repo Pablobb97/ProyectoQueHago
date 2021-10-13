@@ -1,0 +1,34 @@
+private void recogerDatosServidor() {
+        /*String json;
+        usuario=new Usuario("Pablo","Blázquez",23);
+        listaDatos.add(usuario.getNombre());
+        listaDatos.add(usuario.getApellido());
+        listaDatos.add(String.valueOf(usuario.getEdad()));*/
+
+
+        URL url;
+        HttpURLConnection conexion = null;
+
+        try {
+            url = new URL("http://10.0.2.2:80/Android/AppAndroid1/public/info/"+nombre.getText()+"");
+            System.out.println("************"+url+"************");
+            conexion = (HttpURLConnection) url.openConnection();
+
+
+            InputStreamReader in = new InputStreamReader(conexion.getInputStream());
+            BufferedReader br = new BufferedReader(in);
+
+            String line = br.readLine();
+            System.out.println("------------------------------------------------"+line+"------------------------------------------------");
+            Log.d("HTTP-GET", line);
+            json=line;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (conexion != null) {
+                conexion.disconnect();
+            }
+        }
+        //json= "{\"id\":1,\"nombre\":\"Pablo\",\"apellido\":\"Blázquez\",\"edad\":23,\"created_at\":null,\"updated_at\":null}";
+    }
