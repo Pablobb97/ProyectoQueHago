@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/pablo/Desktop/xampp_Pablo_Nuevo/htdocs/Android/AppPabloProyectoQueHago/app/Models/Guardar.php</file>
+            <file>file:/C:/Users/pablo/Desktop/xampp_Pablo_Nuevo/htdocs/Android/AppPabloProyectoQueHago/app/Models/Usuario.php</file>
+            <file>file:/C:/Users/pablo/Desktop/xampp_Pablo_Nuevo/htdocs/Android/AppPabloProyectoQueHago/database/migrations/2021_10_29_173512_guardar_tabla.php</file>
+            <file>file:/C:/Users/pablo/Desktop/xampp_Pablo_Nuevo/htdocs/Android/AppPabloProyectoQueHago/app/Http/Controllers/PeticionController.php</file>
+            <file>file:/C:/Users/pablo/Desktop/xampp_Pablo_Nuevo/htdocs/Android/AppPabloProyectoQueHago/database/migrations/2021_09_27_172040_usuario.php</file>
+            <file>file:/C:/Users/pablo/Desktop/xampp_Pablo_Nuevo/htdocs/Android/AppPabloProyectoQueHago/routes/web.php</file>
+        </group>
+    </open-files>
 </project-private>

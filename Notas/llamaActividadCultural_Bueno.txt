@@ -1,0 +1,24 @@
+private void llamaActividadCultural() {
+        ActividadCultutalServicio service=API.getApi().create(ActividadCultutalServicio.class);
+        //String nombreDistrito="ARGANZUELA";
+        if (popMenuPulsado){
+
+        }
+        Call<DatosServiciosActividadesCulturalesExtenso> actividadCulturalExtensaCallCall=service.getActividadCulturalExtensa(url+"");
+        //Call<DatosServiciosActividadesCulturalesExtenso> actividadCulturalExtensaCallCall=service.getActividadCulturalExtensa(linkACLimpio(linkAC)+"");
+        actividadCulturalExtensaCallCall.enqueue(new Callback<DatosServiciosActividadesCulturalesExtenso>() {
+            @Override
+            public void onResponse(Call<DatosServiciosActividadesCulturalesExtenso> call, Response<DatosServiciosActividadesCulturalesExtenso> response) {
+                System.out.println("link ultimo: "+linkACLimpio(linkAC));
+                datosServiciosActividadesCulturalesExtenso = response.body();
+                //Toast.makeText(App.this, "Descripcion: "+datosServiciosActividadesCulturalesExtenso.getListaDatosServicios().get(0).getDescription(), Toast.LENGTH_SHORT).show();
+                abrirPopMenu();
+            }
+
+            @Override
+            public void onFailure(Call<DatosServiciosActividadesCulturalesExtenso> call, Throwable t) {
+                Toast.makeText(App.this, "Error", Toast.LENGTH_SHORT).show();
+                //gridviewVisible=false;
+            }
+        });
+    }

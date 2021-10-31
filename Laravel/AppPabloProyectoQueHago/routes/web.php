@@ -17,5 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/info/{nombre}',
+Route::get('info/{nombreyapellido}',
     [App\Http\Controllers\PeticionController::class,'devolverJsonUsuario']);
+
+Route::get('registro/{nombreyapellido}/{nombreusuario}/{contrasena}/{email}/{fechanac}',
+    [App\Http\Controllers\PeticionController::class,'registrarUsuario']);
+
+Route::get('guardar/{tituloManana}/{descriptionManana}/{fechaManana}/{localizacionManana}/{precioManana}/{nombreComida}/{localizacionComida}/{precioComida}/{distritoComida}/{productosComida}/{puntuacionComida}/{tituloTarde}/{descriptionTarde}/{fechaTarde}/{localizacionTarde}/{precioTarde}/{nombreCena}/{localizacionCena}/{precioCena}/{distritoCena}/{productosCena}/{puntuacionCena}',
+    [App\Http\Controllers\PeticionController::class,'guardar']);
+
+Route::get('login/{nombreusuario}/{contrasena}',
+    [App\Http\Controllers\PeticionController::class,'logearUsuario']);
+
+Route::get('comprobar/{nombreusuario}',
+    [App\Http\Controllers\PeticionController::class,'comprobarUsuario']);
+
+Route::get('/todo',
+    [App\Http\Controllers\PeticionController::class,'devolverTodo']);

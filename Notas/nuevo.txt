@@ -1,0 +1,10 @@
+Rematar el login y registro
+
+Apartado de la aplicacion
+-pagina de inicio
+	boton para elegir la fecha
+	*listview de eventos --->Cada uno de estos con un boton en la parte inferior
+		-Mañana
+		-tarde
+		-noche
+	
